@@ -4,16 +4,14 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.weatherapp_starter_project",
+  "applicationId": "com.baseflow.geocoding",
   "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.0.0",
-      "outputFile": "AndroidManifest.xml"
+      "outputFile": "../../merged_manifest/debug/AndroidManifest.xml"
     }
   ],
   "elementType": "File"
