@@ -13,7 +13,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   //call
-  final GlobalController globalController = Get.put(GlobalController(), permanent: true);
+  final GlobalController globalController =
+      Get.put(GlobalController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +25,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: CircularProgressIndicator(),
                 )
               : ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  const HeaderWidget(),
-                ],
-              )),
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    const HeaderWidget(),
+                  ],
+                )),
         ),
       ),
     );
