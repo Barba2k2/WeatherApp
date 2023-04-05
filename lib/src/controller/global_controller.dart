@@ -1,7 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
-class GlobalCOntroller extends GetxController {
+class GlobalController extends GetxController {
   //create varius variables
   final RxBool _isLoading = true.obs;
   final RxDouble _latitude = 0.0.obs;
@@ -9,7 +9,7 @@ class GlobalCOntroller extends GetxController {
 
   //intance for them to be called
   RxBool checkLoading() => _isLoading;
-  RxDouble getLattitude() => _latitude;
+  RxDouble getLatitude() => _latitude;
   RxDouble getLongitude() => _longitude;
 
   @override
@@ -49,6 +49,7 @@ class GlobalCOntroller extends GetxController {
         //update our latitude and longitude
         _latitude.value = value.latitude;
         _longitude.value = value.longitude;
+        _isLoading.value = false;
       },
     );
   }
