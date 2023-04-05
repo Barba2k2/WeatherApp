@@ -1,3 +1,16 @@
+//instace for getting the api response
+class WeatherDataCurrent {
+  final Current current;
+  WeatherDataCurrent({required this.current});
+
+  factory WeatherDataCurrent.fromJson(Map<String, dynamic> json) =>
+      WeatherDataCurrent(
+        current: Current.fromJson(
+          json['current'],
+        ),
+      );
+}
+
 class Current {
   double? temp;
   int? humidity;
@@ -39,7 +52,10 @@ class Weather {
   String? icon;
 
   Weather({
-    this.id, this.main, this.description, this.icon,
+    this.id,
+    this.main,
+    this.description,
+    this.icon,
   });
 
   //from json
