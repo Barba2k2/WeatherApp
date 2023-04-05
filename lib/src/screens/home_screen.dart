@@ -1,15 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../controller/global_controller.dart';
+import '../widgets/header_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalController globalController = Get.put(
+    GlobalController(),
+    permanent: true,
+  );
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Obx(
+          () => globalController.checkLoading().isTrue
+              ? Center(
+                  // child: CircularProgressIndicator(),
+                  child: Text(
+                    'Nao funciona',
+                    style: GoogleFonts.inter(
+                      fontSize: 24,
+                      color: Colors.red,
+                    ),
+                  ),
+                )
+              : ListView(
+                  scrollDirection: Axis.vertical,
+                  children: const [
+                    SizedBox(height: 20),
+                    HeaderWidget(),
+                  ],
+                ),
+        ),
+      ),
+    );
   }
 }
