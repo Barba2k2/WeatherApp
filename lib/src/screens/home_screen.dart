@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/global_controller.dart';
+import '../utils/custom_colors.dart';
+import '../widgets/confort_level.dart';
 import '../widgets/current_weather_widget.dart';
 import '../widgets/daily_data_forecast.dart';
 import '../widgets/header_widget.dart';
@@ -24,8 +26,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Obx(
           () => globalController.checkLoading().isTrue
-              ? const Center(
-                  child: CircularProgressIndicator(),
+              ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/icons/clouds.png'),
+                      const CircularProgressIndicator(),
+                    ],
+                  ),
                 )
               : Center(
                   child: ListView(
@@ -46,6 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       DailyDataForecast(
                         weatherDataDaily:
                             globalController.getData().getDailyWeather(),
+                      ),
+                      Container(
+                        height: 1,
+                        color: CustomColors.dividerLine,
+                      ),
+                      const SizedBox(height: 10),
+                      ConfortLevel(
+                        weatherDataCurrent:
+                            globalController.getData().getCurrentWeather(),
                       ),
                     ],
                   ),
