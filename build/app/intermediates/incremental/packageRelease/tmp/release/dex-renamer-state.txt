@@ -1,0 +1,4 @@
+#Thu Apr 06 20:14:51 BRT 2023
+base.0=D\:\\Users\\loren\\Documents\\Flutter_Projects\\WeatherApp\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
