@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../controller/global_controller.dart';
 import '../widgets/current_weather_widget.dart';
 import '../widgets/header_widget.dart';
@@ -23,15 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Obx(
           () => globalController.checkLoading().isTrue
-              ? Center(
-                  // child: CircularProgressIndicator(),
-                  child: Text(
-                    'Nao funciona',
-                    style: GoogleFonts.inter(
-                      fontSize: 24,
-                      color: Colors.red,
-                    ),
-                  ),
+              ? const Center(
+                  child: CircularProgressIndicator(),
                 )
               : Center(
                   child: ListView(
